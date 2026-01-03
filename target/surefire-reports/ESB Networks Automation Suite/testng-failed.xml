@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [ESB Networks Automation Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="Form Automation Tests(failed)" verbose="0">
+    <classes>
+      <class name="com.esbnetworks.tests.FormAutomationTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="testLoginAndFillForm"/>
+        </methods>
+      </class> <!-- com.esbnetworks.tests.FormAutomationTest -->
+    </classes>
+  </test> <!-- Form Automation Tests(failed) -->
+</suite> <!-- Failed suite [ESB Networks Automation Suite] -->
