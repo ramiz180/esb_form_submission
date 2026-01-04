@@ -23,15 +23,15 @@ public class BasePage {
     }
 
     protected void click(By locator, String elementName) {
-        logger.info("Clicking " + elementName);
         wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+        logger.info("Clicked on " + elementName);
     }
 
     protected void sendKeys(By locator, String text, String elementName) {
-        logger.info("Typing '" + text + "' into " + elementName);
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         element.clear();
         element.sendKeys(text);
+        logger.info("Typed '" + text + "' into " + elementName);
     }
 
     protected void selectByVisibleText(By locator, String text, String elementName) {
@@ -122,4 +122,20 @@ public class BasePage {
         WebElement element = driver.findElement(locator);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
+
+    public void selectYesNo(By yesLocator, By noLocator,
+            boolean selectYes, String fieldName) {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        By target = selectYes ? yesLocator : noLocator;
+
+        WebElement el = wait.until(
+                ExpectedConditions.elementToBeClickable(target));
+
+        ((JavascriptExecutor) driver)
+                .executeScript("arguments[0].click();", el);
+
+        logger.info(fieldName + " set to " + (selectYes ? "YES" : "NO"));
+    }
+
 }

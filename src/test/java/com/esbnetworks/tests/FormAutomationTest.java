@@ -94,10 +94,41 @@ public class FormAutomationTest extends BaseTest {
         formPage.clickSave();
         Thread.sleep(5000);
         // Upload File
-        formPage.uploadFile("C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
+        formPage.uploadFile(120, "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
+        formPage.uploadFile(121, "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
+        formPage.uploadFile(122, "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
+        formPage.uploadFile(123, "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
 
-        logger.info("Form filled and file uploaded successfully!");
-        // Add a sleep for demo purposes like the python script
+        logger.info("Unit Type Test Certificate file uploaded successfully!");
+
+        formPage.uploadFile(130, "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
+        formPage.uploadFile(131, "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
+        formPage.uploadFile(132, "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
+        formPage.uploadFile(133, "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
+
+        formPage.clickSaveAndContinueForm2();
+        logger.info("Form 2 filled and file uploaded successfully!");
+
+        // ----- Form 3 -----
+        logger.info("***Filling Form 003***");
+
+        // -------- FORM 3 : POST JAN 28, 2022 --------
+        formPage.confirmPostRegisteredInstaller(true);
+
+        // MUST be entered or DOM will not render settings
+        formPage.enterPostSafeElectricNumber("123456");
+
+        // Now all toggles are available
+        formPage.confirmPostOverVoltage(true);
+        formPage.confirmPostUnderVoltage(true);
+        formPage.confirmPostOverFrequency(true);
+        formPage.confirmPostUnderFrequency(true);
+        formPage.confirmPostROCOF(true);
+        formPage.confirmPostVectorShift(false);
+
+        // formPage.clickSaveAndContinueForm3();
+        logger.info("Form 3 filled successfully!");
+
         Thread.sleep(5000);
     }
 }

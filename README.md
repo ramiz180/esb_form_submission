@@ -1,6 +1,6 @@
 # ESB Form Submission
 
-This project is a migration of the existing Python Selenium automation to a Java-based framework using Maven, TestNG, Log4j2, and the Page Object Model (POM).
+This project is a Java-based framework using Maven, TestNG, Log4j2, and the Page Object Model (POM).
 
 ## Project Structure
 

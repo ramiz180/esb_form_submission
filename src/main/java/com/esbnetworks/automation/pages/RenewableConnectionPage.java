@@ -2,8 +2,12 @@ package com.esbnetworks.automation.pages;
 
 import com.esbnetworks.automation.base.BasePage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 
 public class RenewableConnectionPage extends BasePage {
 
@@ -131,41 +135,37 @@ public class RenewableConnectionPage extends BasePage {
         logger.info("Clicked 'Save'");
     }
 
-    public void uploadFile(String filePath) {
-        // 1. Click "Upload File 1" to open modal
-        // Using "Upload File 1" text or similar unique identifier
-        By uploadBtn = By.xpath("(//button[contains(., 'Upload File')])[1]");
-        clickRadioButton(uploadBtn, "Upload File 1"); // Click to open modal
+    public void uploadFile(int index, String filePath) {
 
-        // 2. Wait for modal and handle file input
-        // The modal usually puts the file input in the DOM.
-        // We target the input inside the modal (or the visible generic one)
-        By fileInput = By.xpath("//input[@type='file']");
-        By attachBtn = By.xpath("//button[contains(., 'Attach')]");
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        try {
-            Thread.sleep(2000); // Wait for modal animation
+        String uploadBtnId = "btn-upload-" + index;
+        String fileInputId = "uploadedfile-" + index;
+        String attachBtnId = "map-upload-" + index;
+        String uploadedFileLabelId = "uploadedFileNm-" + index;
 
-            // Upload file
-            WebElement uploadElement = driver.findElement(fileInput);
-            uploadElement.sendKeys(filePath);
-            logger.info("Sent keys to file input: " + filePath);
+        By spinnerLocator = By.cssSelector("#" + attachBtnId + " .spinner");
 
-            Thread.sleep(1000);
+        // 1. Open upload modal
+        WebElement uploadBtn = driver.findElement(By.id(uploadBtnId));
+        js.executeScript("arguments[0].click();", uploadBtn);
 
-            // Click Attach
-            WebElement attach = driver.findElement(attachBtn);
-            ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].click();", attach);
-            logger.info("Clicked 'Attach' in modal");
+        // 2. Upload file
+        WebElement fileInput = wait.until(
+                ExpectedConditions.presenceOfElementLocated(By.id(fileInputId)));
+        fileInput.sendKeys(filePath);
 
-            Thread.sleep(2000); // Wait for upload/attach to process
+        // 3. Wait for spinner to disappear (CRITICAL)
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(spinnerLocator));
 
-        } catch (Exception e) {
-            logger.error("Failed to upload file via modal: " + e.getMessage());
-            // Fallback: try global input if logic fails?
-            // Better to throw so we know it failed
-            throw new RuntimeException("Upload failed", e);
-        }
+        // 4. Click Attach
+        WebElement attachBtn = driver.findElement(By.id(attachBtnId));
+        attachBtn.click();
+
+        // 5. Verify upload success
+        wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.id(uploadedFileLabelId)));
     }
 
     public void navigateToApplication() {
@@ -338,4 +338,168 @@ public class RenewableConnectionPage extends BasePage {
     public void enterInverterCapacity(String text) {
         sendKeys(inverterCapacity, text, "Inverter Capacity");
     }
+
+    public void clickSaveAndContinueForm2() {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        By btn = By.id("btnSiteDetails");
+        By spinner = By.cssSelector("#btnSiteDetails .spinner");
+
+        js.executeScript("arguments[0].click();", driver.findElement(btn));
+
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(spinner));
+    }
+
+    // ---Form 003 locators---
+    // ===============================
+    // FORM 3 – PROTECTION SETTINGS
+    // ===============================
+
+    // ---------- PRE JAN 28, 2022 ----------
+
+    // Registered Installer
+    private final By preRegisteredInstallerYes = By.id("pre-protectSet-registerInstaller-yes-tab");
+    private final By preRegisteredInstallerNo = By.id("pre-protectSet-registerInstaller-no-tab");
+
+    // Over Voltage
+    private final By preOverVoltageYes = By.id("IsPreOverVoltage_Yes");
+    private final By preOverVoltageNo = By.id("IsPreOverVoltage_No");
+
+    // Under Voltage
+    private final By preUnderVoltageYes = By.id("IsPreUnderVoltage_Yes");
+    private final By preUnderVoltageNo = By.id("IsPreUnderVoltage_No");
+
+    // ROCOF
+    private final By preROCOFYes = By.id("IsPreROCOF_Yes");
+    private final By preROCOFNo = By.id("IsPreROCOF_No");
+
+    // Vector Shift
+    private final By preVectorShiftYes = By.id("IsPreVectorShift_Yes");
+    private final By preVectorShiftNo = By.id("IsPreVectorShift_No");
+
+    // ---------- POST JAN 28, 2022 ----------
+
+    // =======================================================
+    // FORM 003 – PROTECTION SETTINGS (POST JAN 28, 2022 ONLY)
+    // =======================================================
+
+    // -------------------------------------------------------
+    // 1. REGISTERED INSTALLER (POST)
+    // -------------------------------------------------------
+    private final By postRegisteredInstallerYes = By.id("post-protectSet-registerInstaller-yes-tab");
+
+    private final By postRegisteredInstallerNo = By.id("post-protectSet-registerInstaller-no-tab");
+
+    // Safe Electric Number (MANDATORY when Yes is selected)
+    private final By postSafeElectricNumber = By.id("post-protectSet-registerInstaller-electNo");
+
+    // -------------------------------------------------------
+    // 2. OVER VOLTAGE (POST)
+    // -------------------------------------------------------
+    private final By postOverVoltageYes = By.id("post-overVoltage-yes-tab");
+
+    private final By postOverVoltageNo = By.id("post-overVoltage-no-tab");
+
+    // -------------------------------------------------------
+    // 3. UNDER VOLTAGE (POST)
+    // -------------------------------------------------------
+    private final By postUnderVoltageYes = By.id("post-underVoltage-yes-tab");
+
+    private final By postUnderVoltageNo = By.id("post-underVoltage-no-tab");
+
+    // -------------------------------------------------------
+    // 4. OVER FREQUENCY (POST)
+    // -------------------------------------------------------
+    private final By postOverFrequencyYes = By.id("post-overFrequency-yes-tab");
+
+    private final By postOverFrequencyNo = By.id("post-overFrequency-no-tab");
+
+    // -------------------------------------------------------
+    // 5. UNDER FREQUENCY (POST)
+    // -------------------------------------------------------
+    private final By postUnderFrequencyYes = By.id("post-underFrequency-yes-tab");
+
+    private final By postUnderFrequencyNo = By.id("post-underFrequency-no-tab");
+
+    // -------------------------------------------------------
+    // 6. ROCOF – Rate of Change of Frequency (POST)
+    // -------------------------------------------------------
+    private final By postROCOFYes = By.id("post-rocof-yes-tab");
+
+    private final By postROCOFNo = By.id("post-rocof-no-tab");
+
+    // -------------------------------------------------------
+    // 7. VECTOR SHIFT (POST)
+    // -------------------------------------------------------
+    private final By postVectorShiftYes = By.id("post-vectorShift-yes-tab");
+
+    private final By postVectorShiftNo = By.id("post-vectorShift-no-tab");
+
+    // ------------------------------------
+    // -------- POST JAN 28 ACTIONS --------
+
+    public void confirmPostRegisteredInstaller(boolean yes) {
+        if (yes) {
+            click(postRegisteredInstallerYes, "Post Registered Installer");
+        } else {
+            click(postRegisteredInstallerNo, "Post Registered Installer");
+        }
+    }
+
+    public void enterPostSafeElectricNumber(String number) {
+        scrollToElement(postSafeElectricNumber);
+        sendKeys(postSafeElectricNumber, number, "Safe Electric Number");
+    }
+
+    public void confirmPostOverVoltage(boolean yes) {
+        selectYesNo(postOverVoltageYes, postOverVoltageNo,
+                yes, "Post Over Voltage");
+    }
+
+    public void confirmPostUnderVoltage(boolean yes) {
+        selectYesNo(postUnderVoltageYes, postUnderVoltageNo,
+                yes, "Post Under Voltage");
+    }
+
+    public void confirmPostOverFrequency(boolean yes) {
+        selectYesNo(postOverFrequencyYes, postOverFrequencyNo,
+                yes, "Post Over Frequency");
+    }
+
+    public void confirmPostUnderFrequency(boolean yes) {
+        selectYesNo(postUnderFrequencyYes, postUnderFrequencyNo,
+                yes, "Post Under Frequency");
+    }
+
+    public void confirmPostROCOF(boolean yes) {
+        selectYesNo(postROCOFYes, postROCOFNo,
+                yes, "Post ROCOF");
+    }
+
+    public void confirmPostVectorShift(boolean yes) {
+        selectYesNo(postVectorShiftYes, postVectorShiftNo,
+                yes, "Post Vector Shift");
+    }
+
+    public void clickSaveAndContinueForm3() {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        By saveContinueBtn = By.id("btnSiteDetails");
+        By spinner = By.cssSelector("#btnSiteDetails .spinner");
+
+        // Scroll to button (important on long Form 3)
+        scrollToElement(saveContinueBtn);
+
+        // Click using JS (normal click is flaky due to overlay/spinner)
+        js.executeScript("arguments[0].click();", driver.findElement(saveContinueBtn));
+        logger.info("Clicked 'Save & Continue' on Form 3");
+
+        // Wait for spinner to disappear (FORM LOAD SYNC)
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(spinner));
+    }
+
 }
