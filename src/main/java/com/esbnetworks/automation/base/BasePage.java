@@ -27,6 +27,26 @@ public class BasePage {
         logger.info("Clicked on " + elementName);
     }
 
+    protected void jsClickCentered(By locator, String name) {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        WebElement el = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+
+        // Scroll to center of viewport (CRITICAL)
+        js.executeScript(
+                "arguments[0].scrollIntoView({block:'center', inline:'center'});", el);
+
+        // Small pause for UI settle (not sleep-heavy)
+        js.executeScript("window.requestAnimationFrame(function(){});");
+
+        // JS click
+        js.executeScript("arguments[0].click();", el);
+
+        logger.info("JS clicked (centered): " + name);
+    }
+
     protected void sendKeys(By locator, String text, String elementName) {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         element.clear();
@@ -136,6 +156,54 @@ public class BasePage {
                 .executeScript("arguments[0].click();", el);
 
         logger.info(fieldName + " set to " + (selectYes ? "YES" : "NO"));
+    }
+
+    protected void jsClickWithChange(By locator, String name) {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        WebElement el = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+
+        // Scroll to center
+        js.executeScript(
+                "arguments[0].scrollIntoView({block:'center'});", el);
+
+        // Native click
+        js.executeScript("arguments[0].click();", el);
+
+        // 🔥 FORCE change + input events (CRITICAL)
+        js.executeScript(
+                "arguments[0].dispatchEvent(new Event('change', { bubbles: true }));" +
+                        "arguments[0].dispatchEvent(new Event('input', { bubbles: true }));",
+                el);
+
+        logger.info("JS clicked with change event: " + name);
+    }
+
+    protected void clickJsWhenClickable(By locator, String log) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement el = wait.until(ExpectedConditions.elementToBeClickable(locator)); // wait for clickable
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", el); // JS click for safety
+        logger.info("Clicked: " + log);
+    }
+
+    protected void waitUntilVisible(By locator) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    protected void setYesNo(By yesLocator, By noLocator, boolean yes, String label) {
+        if (yes) {
+            jsClickWithChange(yesLocator, label + " YES");
+        } else {
+            jsClickWithChange(noLocator, label + " NO");
+        }
+    }
+
+    protected void waitUntilPresent(By locator) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
 }

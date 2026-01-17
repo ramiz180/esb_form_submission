@@ -38,8 +38,8 @@ public class BaseTest {
     @AfterMethod
     public void tearDown() {
         if (driver != null) {
-            logger.info("----------Closing WebDriver----------");
             driver.quit();
+            logger.info("----------closed WebDriver----------");
         }
     }
 }

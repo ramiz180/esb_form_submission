@@ -1,2 +1,4 @@
-com\esbnetworks\automation\base\BaseTest.class
+com\esbnetworks\automation\base\AnnotationTransformer.class
 com\esbnetworks\tests\FormAutomationTest.class
+com\esbnetworks\automation\base\BaseTest.class
+com\esbnetworks\automation\base\RetryAnalyzer.class

@@ -136,40 +136,42 @@ public class RenewableConnectionPage extends BasePage {
     }
 
     public void uploadFile(int index, String filePath) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+            String uploadBtnId = "btn-upload-" + index;
+            String fileInputId = "uploadedfile-" + index;
+            String attachBtnId = "map-upload-" + index;
+            String uploadedFileLabelId = "uploadedFileNm-" + index;
 
-        String uploadBtnId = "btn-upload-" + index;
-        String fileInputId = "uploadedfile-" + index;
-        String attachBtnId = "map-upload-" + index;
-        String uploadedFileLabelId = "uploadedFileNm-" + index;
+            By spinnerLocator = By.cssSelector("#" + attachBtnId + " .spinner");
 
-        By spinnerLocator = By.cssSelector("#" + attachBtnId + " .spinner");
+            // 1. Open upload modal
+            WebElement uploadBtn = driver.findElement(By.id(uploadBtnId));
+            js.executeScript("arguments[0].click();", uploadBtn);
 
-        // 1. Open upload modal
-        WebElement uploadBtn = driver.findElement(By.id(uploadBtnId));
-        js.executeScript("arguments[0].click();", uploadBtn);
+            // 2. Upload file
+            WebElement fileInput = wait.until(
+                    ExpectedConditions.presenceOfElementLocated(By.id(fileInputId)));
+            fileInput.sendKeys(filePath);
 
-        // 2. Upload file
-        WebElement fileInput = wait.until(
-                ExpectedConditions.presenceOfElementLocated(By.id(fileInputId)));
-        fileInput.sendKeys(filePath);
+            // 3. Wait for spinner to disappear (CRITICAL)
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(spinnerLocator));
 
-        // 3. Wait for spinner to disappear (CRITICAL)
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(spinnerLocator));
+            // 4. Click Attach
+            WebElement attachBtn = driver.findElement(By.id(attachBtnId));
+            attachBtn.click();
 
-        // 4. Click Attach
-        WebElement attachBtn = driver.findElement(By.id(attachBtnId));
-        attachBtn.click();
-
-        // 5. Verify upload success
-        wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.id(uploadedFileLabelId)));
+            // 5. Verify upload success
+            wait.until(ExpectedConditions.visibilityOfElementLocated(
+                    By.id(uploadedFileLabelId)));
+        } catch (Exception e) {
+            logger.error("Failed to upload file: " + e.getMessage());
+        }
     }
 
     public void navigateToApplication() {
-        // Step 2 from python: Click link 1 then link 2
         try {
             // handleCookies(); // Check for cookies before starting navigation
 
@@ -199,13 +201,13 @@ public class RenewableConnectionPage extends BasePage {
                 }
             }
 
-            Thread.sleep(2000); // Allow time for next page to settle
+            Thread.sleep(1000); // Allow time for next page to settle
 
             // Use JS click for 'Continue' in case of overlay/interception
             WebElement continueBtn = driver.findElement(continueLink);
             ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].click();", continueBtn);
 
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -351,36 +353,6 @@ public class RenewableConnectionPage extends BasePage {
 
         wait.until(ExpectedConditions.invisibilityOfElementLocated(spinner));
     }
-
-    // ---Form 003 locators---
-    // ===============================
-    // FORM 3 – PROTECTION SETTINGS
-    // ===============================
-
-    // ---------- PRE JAN 28, 2022 ----------
-
-    // Registered Installer
-    private final By preRegisteredInstallerYes = By.id("pre-protectSet-registerInstaller-yes-tab");
-    private final By preRegisteredInstallerNo = By.id("pre-protectSet-registerInstaller-no-tab");
-
-    // Over Voltage
-    private final By preOverVoltageYes = By.id("IsPreOverVoltage_Yes");
-    private final By preOverVoltageNo = By.id("IsPreOverVoltage_No");
-
-    // Under Voltage
-    private final By preUnderVoltageYes = By.id("IsPreUnderVoltage_Yes");
-    private final By preUnderVoltageNo = By.id("IsPreUnderVoltage_No");
-
-    // ROCOF
-    private final By preROCOFYes = By.id("IsPreROCOF_Yes");
-    private final By preROCOFNo = By.id("IsPreROCOF_No");
-
-    // Vector Shift
-    private final By preVectorShiftYes = By.id("IsPreVectorShift_Yes");
-    private final By preVectorShiftNo = By.id("IsPreVectorShift_No");
-
-    // ---------- POST JAN 28, 2022 ----------
-
     // =======================================================
     // FORM 003 – PROTECTION SETTINGS (POST JAN 28, 2022 ONLY)
     // =======================================================
@@ -388,99 +360,126 @@ public class RenewableConnectionPage extends BasePage {
     // -------------------------------------------------------
     // 1. REGISTERED INSTALLER (POST)
     // -------------------------------------------------------
-    private final By postRegisteredInstallerYes = By.id("post-protectSet-registerInstaller-yes-tab");
+    private final By postRegisteredInstallerYes = By.id("IsPostProtectSetRegisterInstaller_Yes");
 
-    private final By postRegisteredInstallerNo = By.id("post-protectSet-registerInstaller-no-tab");
+    private final By postRegisteredInstallerNo = By.id("IsPostProtectSetRegisterInstaller_No");
+
+    public void confirmPostRegisteredInstaller(boolean yes) {
+        setYesNo(postRegisteredInstallerYes, postRegisteredInstallerNo,
+                yes, "Post Registered Installer");
+
+        // Safe Electric number appears only when YES selected
+        if (yes) {
+            waitUntilVisible(postSafeElectricNumber);
+        }
+    }
 
     // Safe Electric Number (MANDATORY when Yes is selected)
     private final By postSafeElectricNumber = By.id("post-protectSet-registerInstaller-electNo");
 
-    // -------------------------------------------------------
-    // 2. OVER VOLTAGE (POST)
-    // -------------------------------------------------------
-    private final By postOverVoltageYes = By.id("post-overVoltage-yes-tab");
-
-    private final By postOverVoltageNo = By.id("post-overVoltage-no-tab");
+    public void enterPostSafeElectricNumber(String number) {
+        waitUntilVisible(postSafeElectricNumber); // safety
+        sendKeys(postSafeElectricNumber, number, "Safe Electric Number");
+    }
 
     // -------------------------------------------------------
-    // 3. UNDER VOLTAGE (POST)
+    // 2. Single Stage Voltage Setting
     // -------------------------------------------------------
-    private final By postUnderVoltageYes = By.id("post-underVoltage-yes-tab");
+    private final By postSingleStageVoltageYes = By.id("IsPostSingleStageVoltage_Yes");
 
-    private final By postUnderVoltageNo = By.id("post-underVoltage-no-tab");
+    private final By postSingleStageVoltageNo = By.id("IsPostSingleStageVoltage_No");
 
-    // -------------------------------------------------------
-    // 4. OVER FREQUENCY (POST)
-    // -------------------------------------------------------
-    private final By postOverFrequencyYes = By.id("post-overFrequency-yes-tab");
-
-    private final By postOverFrequencyNo = By.id("post-overFrequency-no-tab");
+    public void confirmPostSingleStageVoltage(boolean yes) {
+        setYesNo(postSingleStageVoltageYes, postSingleStageVoltageNo, yes, "Post Single Stage Voltage");
+    }
 
     // -------------------------------------------------------
-    // 5. UNDER FREQUENCY (POST)
+    // 3. Two Stage Voltage Settings Stage 1
     // -------------------------------------------------------
-    private final By postUnderFrequencyYes = By.id("post-underFrequency-yes-tab");
+    private final By postTwoStageVoltageSettingsStage1Yes = By.id("IsPostTwoStageVoltage1_Yes");
 
-    private final By postUnderFrequencyNo = By.id("post-underFrequency-no-tab");
+    private final By postTwoStageVoltageSettingsStage1No = By.id("IsPostTwoStageVoltage1_No");
+
+    public void confirmPostTwoStageVoltageSettingsStage1(boolean yes) {
+        setYesNo(postTwoStageVoltageSettingsStage1Yes, postTwoStageVoltageSettingsStage1No, yes,
+                "Post Two Stage Voltage Settings Stage 1");
+    }
+
+    // -------------------------------------------------------
+    // 4.Two Stage Voltage Settings Stage 2
+    // -------------------------------------------------------
+    private final By postTwoStageVoltageSettingsStage2Yes = By.id("IsPostTwoStageVoltage2_Yes");
+
+    private final By postTwoStageVoltageSettingsStage2No = By.id("IsPostTwoStageVoltage2_No");
+
+    public void confirmPostTwoStageVoltageSettingsStage2(boolean yes) {
+        setYesNo(postTwoStageVoltageSettingsStage2Yes, postTwoStageVoltageSettingsStage2No, yes,
+                "Post Two Stage Voltage Settings Stage 2");
+    }
+
+    // -------------------------------------------------------
+    // 5. Under Voltage (POST)
+    // -------------------------------------------------------
+    private final By postUnderVoltageYes = By.id("IsPostUnderVoltage_Yes");
+
+    private final By postUnderVoltageNo = By.id("IsPostUnderVoltage_No");
+
+    public void confirmPostUnderVoltage(boolean yes) {
+        setYesNo(postUnderVoltageYes, postUnderVoltageNo, yes, "Post Under Voltage");
+    }
+
+    // -------------------------------------------------------
+    // 5. Over Frequency (POST)
+    // -------------------------------------------------------
+    private final By postOverFrequencyYes = By.id("IsPostOverFrequency_Yes");
+
+    private final By postOverFrequencyNo = By.id("IsPostOverFrequency_No");
+
+    public void confirmPostOverFrequency(boolean yes) {
+        setYesNo(postOverFrequencyYes, postOverFrequencyNo, yes, "Post Over Frequency");
+    }
+
+    // -------------------------------------------------------
+    // 6. Under Frequency (POST)
+    // -------------------------------------------------------
+    private final By postUnderFrequencyYes = By.id("IsPostUnderFrequency_Yes");
+
+    private final By postUnderFrequencyNo = By.id("IsPostUnderFrequency_No");
+
+    public void confirmPostUnderFrequency(boolean yes) {
+        setYesNo(postUnderFrequencyYes, postUnderFrequencyNo, yes, "Post Under Frequency");
+    }
 
     // -------------------------------------------------------
     // 6. ROCOF – Rate of Change of Frequency (POST)
     // -------------------------------------------------------
-    private final By postROCOFYes = By.id("post-rocof-yes-tab");
+    private final By postROCOFYes = By.id("IsPostROCOF_Yes");
 
-    private final By postROCOFNo = By.id("post-rocof-no-tab");
+    private final By postROCOFNo = By.id("IsPostROCOF_No");
+
+    public void confirmPostROCOF(boolean yes) {
+        setYesNo(postROCOFYes, postROCOFNo, yes, "Post ROCOF");
+    }
 
     // -------------------------------------------------------
     // 7. VECTOR SHIFT (POST)
     // -------------------------------------------------------
-    private final By postVectorShiftYes = By.id("post-vectorShift-yes-tab");
+    private final By postVectorShiftYes = By.id("IsPostVectorShift_Yes");
 
-    private final By postVectorShiftNo = By.id("post-vectorShift-no-tab");
+    private final By postVectorShiftNo = By.id("IsPostVectorShift_No");
+
+    public void confirmPostVectorShift(boolean yes) {
+        setYesNo(postVectorShiftYes, postVectorShiftNo, yes, "Post Vector Shift");
+    }
 
     // ------------------------------------
     // -------- POST JAN 28 ACTIONS --------
+    // Checkbox for Post Installation Confirmed by Installer
+    private final By clickCheckbox = By.id("IsPostInstallationConfirmedByInstaller_Yes");
 
-    public void confirmPostRegisteredInstaller(boolean yes) {
-        if (yes) {
-            click(postRegisteredInstallerYes, "Post Registered Installer");
-        } else {
-            click(postRegisteredInstallerNo, "Post Registered Installer");
-        }
-    }
-
-    public void enterPostSafeElectricNumber(String number) {
-        scrollToElement(postSafeElectricNumber);
-        sendKeys(postSafeElectricNumber, number, "Safe Electric Number");
-    }
-
-    public void confirmPostOverVoltage(boolean yes) {
-        selectYesNo(postOverVoltageYes, postOverVoltageNo,
-                yes, "Post Over Voltage");
-    }
-
-    public void confirmPostUnderVoltage(boolean yes) {
-        selectYesNo(postUnderVoltageYes, postUnderVoltageNo,
-                yes, "Post Under Voltage");
-    }
-
-    public void confirmPostOverFrequency(boolean yes) {
-        selectYesNo(postOverFrequencyYes, postOverFrequencyNo,
-                yes, "Post Over Frequency");
-    }
-
-    public void confirmPostUnderFrequency(boolean yes) {
-        selectYesNo(postUnderFrequencyYes, postUnderFrequencyNo,
-                yes, "Post Under Frequency");
-    }
-
-    public void confirmPostROCOF(boolean yes) {
-        selectYesNo(postROCOFYes, postROCOFNo,
-                yes, "Post ROCOF");
-    }
-
-    public void confirmPostVectorShift(boolean yes) {
-        selectYesNo(postVectorShiftYes, postVectorShiftNo,
-                yes, "Post Vector Shift");
+    public void clickCheckbox() {
+        waitUntilVisible(clickCheckbox);
+        jsClickWithChange(clickCheckbox, "Post Installation Confirmed by Installer");
     }
 
     public void clickSaveAndContinueForm3() {
@@ -488,8 +487,8 @@ public class RenewableConnectionPage extends BasePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        By saveContinueBtn = By.id("btnSiteDetails");
-        By spinner = By.cssSelector("#btnSiteDetails .spinner");
+        By saveContinueBtn = By.id("saveNcontinueConnectionC");
+        By spinner = By.cssSelector("#saveNcontinueConnectionC .spinner");
 
         // Scroll to button (important on long Form 3)
         scrollToElement(saveContinueBtn);

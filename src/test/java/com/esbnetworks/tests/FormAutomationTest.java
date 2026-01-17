@@ -4,12 +4,13 @@ import com.esbnetworks.automation.base.BaseTest;
 import com.esbnetworks.automation.pages.LoginPage;
 import com.esbnetworks.automation.pages.RenewableConnectionPage;
 import com.esbnetworks.automation.utils.ConfigReader;
+import com.esbnetworks.automation.base.RetryAnalyzer;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class FormAutomationTest extends BaseTest {
 
-    @Test
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void testLoginAndFillForm() throws InterruptedException {
         logger.info("Starting Login + Form Automation Test");
 
@@ -95,16 +96,22 @@ public class FormAutomationTest extends BaseTest {
         Thread.sleep(5000);
         // Upload File
         formPage.uploadFile(120, "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
-        formPage.uploadFile(121, "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
-        formPage.uploadFile(122, "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
-        formPage.uploadFile(123, "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
+        // formPage.uploadFile(121,
+        // "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
+        // formPage.uploadFile(122,
+        // "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
+        // formPage.uploadFile(123,
+        // "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
 
         logger.info("Unit Type Test Certificate file uploaded successfully!");
 
         formPage.uploadFile(130, "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
-        formPage.uploadFile(131, "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
-        formPage.uploadFile(132, "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
-        formPage.uploadFile(133, "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
+        // formPage.uploadFile(131,
+        // "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
+        // formPage.uploadFile(132,
+        // "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
+        // formPage.uploadFile(133,
+        // "C:\\Users\\ramiz.mondal\\Downloads\\samplePDF.pdf");
 
         formPage.clickSaveAndContinueForm2();
         logger.info("Form 2 filled and file uploaded successfully!");
@@ -119,16 +126,18 @@ public class FormAutomationTest extends BaseTest {
         formPage.enterPostSafeElectricNumber("123456");
 
         // Now all toggles are available
-        formPage.confirmPostOverVoltage(true);
+        formPage.confirmPostSingleStageVoltage(true);
+        formPage.confirmPostTwoStageVoltageSettingsStage2(true);
         formPage.confirmPostUnderVoltage(true);
         formPage.confirmPostOverFrequency(true);
         formPage.confirmPostUnderFrequency(true);
         formPage.confirmPostROCOF(true);
-        formPage.confirmPostVectorShift(false);
+        formPage.confirmPostVectorShift(true);
 
+        formPage.clickCheckbox();
         // formPage.clickSaveAndContinueForm3();
-        logger.info("Form 3 filled successfully!");
+        logger.info("Form 3 filled and checkbox clicked successfully!");
 
-        Thread.sleep(5000);
+        Thread.sleep(7000);
     }
 }

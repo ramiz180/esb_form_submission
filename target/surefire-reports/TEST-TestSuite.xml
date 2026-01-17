@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="103.544" tests="1" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="80.088" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17.0.14\bin"/>
-    <property name="sun.java.command" value="C:\Users\ramiz.mondal\AppData\Local\Temp\surefire8745838073228711485\surefirebooter-20260104231120176_3.jar C:\Users\ramiz.mondal\AppData\Local\Temp\surefire8745838073228711485 2026-01-04T23-11-19_971-jvmRun1 surefire-20260104231120176_1tmp surefire_0-20260104231120176_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\ramiz.mondal\AppData\Local\Temp\surefire9797806836022410990\surefirebooter-20260117183752577_3.jar C:\Users\ramiz.mondal\AppData\Local\Temp\surefire9797806836022410990 2026-01-17T18-37-52_015-jvmRun1 surefire-20260117183752577_1tmp surefire_0-20260117183752577_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Selenium framework export\esbnetworks (2)\esbnetworks\selenium-form-automation\esb_form_submission\target\test-classes;C:\Selenium framework export\esbnetworks (2)\esbnetworks\selenium-form-automation\esb_form_submission\target\classes;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-java\4.27.0\selenium-java-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-api\4.27.0\selenium-api-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.27.0\selenium-chrome-driver-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.27.0\selenium-chromium-driver-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-json\4.27.0\selenium-json-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.27.0\selenium-manager-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v129\4.27.0\selenium-devtools-v129-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v130\4.27.0\selenium-devtools-v130-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v131\4.27.0\selenium-devtools-v131-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.27.0\selenium-devtools-v85-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.27.0\selenium-edge-driver-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.27.0\selenium-firefox-driver-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-http\4.27.0\selenium-http-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.27.0\selenium-ie-driver-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.27.0\selenium-remote-driver-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\com\google\guava\guava\33.3.1-jre\guava-33.3.1-jre.jar;C:\Users\ramiz.mondal\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\ramiz.mondal\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\ramiz.mondal\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\ramiz.mondal\.m2\repository\org\checkerframework\checker-qual\3.43.0\checker-qual-3.43.0.jar;C:\Users\ramiz.mondal\.m2\repository\com\google\errorprone\error_prone_annotations\2.28.0\error_prone_annotations-2.28.0.jar;C:\Users\ramiz.mondal\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\ramiz.mondal\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\ramiz.mondal\.m2\repository\io\opentelemetry\opentelemetry-api\1.44.1\opentelemetry-api-1.44.1.jar;C:\Users\ramiz.mondal\.m2\repository\io\opentelemetry\opentelemetry-context\1.44.1\opentelemetry-context-1.44.1.jar;C:\Users\ramiz.mondal\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.44.1\opentelemetry-exporter-logging-1.44.1.jar;C:\Users\ramiz.mondal\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.44.1\opentelemetry-sdk-common-1.44.1.jar;C:\Users\ramiz.mondal\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.44.1\opentelemetry-sdk-extension-autoconfigure-spi-1.44.1.jar;C:\Users\ramiz.mondal\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.44.1\opentelemetry-sdk-extension-autoconfigure-1.44.1.jar;C:\Users\ramiz.mondal\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.44.1-alpha\opentelemetry-api-incubator-1.44.1-alpha.jar;C:\Users\ramiz.mondal\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.44.1\opentelemetry-sdk-trace-1.44.1.jar;C:\Users\ramiz.mondal\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.44.1\opentelemetry-sdk-1.44.1.jar;C:\Users\ramiz.mondal\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.44.1\opentelemetry-sdk-metrics-1.44.1.jar;C:\Users\ramiz.mondal\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.44.1\opentelemetry-sdk-logs-1.44.1.jar;C:\Users\ramiz.mondal\.m2\repository\net\bytebuddy\byte-buddy\1.15.10\byte-buddy-1.15.10.jar;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-os\4.27.0\selenium-os-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.27.0\selenium-safari-driver-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\org\seleniumhq\selenium\selenium-support\4.27.0\selenium-support-4.27.0.jar;C:\Users\ramiz.mondal\.m2\repository\org\testng\testng\7.10.2\testng-7.10.2.jar;C:\Users\ramiz.mondal\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\ramiz.mondal\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\ramiz.mondal\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\ramiz.mondal\.m2\repository\org\apache\logging\log4j\log4j-core\2.24.2\log4j-core-2.24.2.jar;C:\Users\ramiz.mondal\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.2\log4j-api-2.24.2.jar;C:\Users\ramiz.mondal\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.16.1\jackson-databind-2.16.1.jar;C:\Users\ramiz.mondal\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.16.1\jackson-annotations-2.16.1.jar;C:\Users\ramiz.mondal\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.16.1\jackson-core-2.16.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\ramiz.mondal\AppData\Local\Temp\surefire8745838073228711485\surefirebooter-20260104231120176_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\ramiz.mondal\AppData\Local\Temp\surefire9797806836022410990\surefirebooter-20260117183752577_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.14+7-LTS"/>
@@ -58,125 +58,88 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testLoginAndFillForm" classname="com.esbnetworks.tests.FormAutomationTest" time="94.149">
-    <failure message="Expected condition failed: waiting for visibility of element located by By.id: post-protectSet-registerInstaller-electNo (tried for 20 second(s) with 500 milliseconds interval)&#10;Build info: version: &apos;4.27.0&apos;, revision: &apos;d6e718d134&apos;&#10;System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\RAMIZ~1.MON\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53627}, goog:processID: 44328, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53627/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: c06cb373f9e34c4daf10d9e0173412f5" type="org.openqa.selenium.TimeoutException"><![CDATA[org.openqa.selenium.TimeoutException: 
-Expected condition failed: waiting for visibility of element located by By.id: post-protectSet-registerInstaller-electNo (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\RAMIZ~1.MON\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53627}, goog:processID: 44328, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53627/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c06cb373f9e34c4daf10d9e0173412f5
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.esbnetworks.automation.base.BasePage.sendKeys(BasePage.java:32)
-	at com.esbnetworks.automation.pages.RenewableConnectionPage.enterPostSafeElectricNumber(RenewableConnectionPage.java:450)
-	at com.esbnetworks.tests.FormAutomationTest.testLoginAndFillForm(FormAutomationTest.java:119)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]></failure>
-    <system-out><![CDATA[2026-01-04T17:41:21.962798500Z main INFO Starting configuration XmlConfiguration[location=C:\Selenium framework export\esbnetworks (2)\esbnetworks\selenium-form-automation\esb_form_submission\target\classes\log4j2.xml, lastModified=2025-12-25T05:00:35.468Z]...
-2026-01-04T17:41:21.964310800Z main INFO Start watching for changes to C:\Selenium framework export\esbnetworks (2)\esbnetworks\selenium-form-automation\esb_form_submission\target\classes\log4j2.xml every 0 seconds
-2026-01-04T17:41:21.964310800Z main INFO Configuration XmlConfiguration[location=C:\Selenium framework export\esbnetworks (2)\esbnetworks\selenium-form-automation\esb_form_submission\target\classes\log4j2.xml, lastModified=2025-12-25T05:00:35.468Z] started.
-2026-01-04T17:41:21.969486200Z main INFO Stopping configuration org.apache.logging.log4j.core.config.DefaultConfiguration@738dc9b...
-2026-01-04T17:41:21.969486200Z main INFO Configuration org.apache.logging.log4j.core.config.DefaultConfiguration@738dc9b stopped.
-2026-01-04 23:11:22 [main] INFO  com.esbnetworks.automation.base.BaseTest - ----------Initializing Selenium WebDriver------------
-2026-01-04 23:11:26 [main] INFO  com.esbnetworks.automation.base.BaseTest - Navigating to login page: https://newconnections.esbnetworks.ie/RenewableConnection/RenewableConnectionType
-2026-01-04 23:11:29 [main] INFO  com.esbnetworks.automation.base.BaseTest - Starting Login + Form Automation Test
-2026-01-04 23:11:29 [main] INFO  com.esbnetworks.automation.base.BaseTest - Logging in as: edel@solarbeo.ie
-2026-01-04 23:11:29 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'edel@solarbeo.ie' into Username Field
-2026-01-04 23:11:31 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'Cooleen12024!' into Password Field
-2026-01-04 23:11:31 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking Login Button
-2026-01-04 23:11:31 [main] INFO  com.esbnetworks.automation.base.BasePage - Login action completed successfully.
-2026-01-04 23:11:51 [main] INFO  com.esbnetworks.automation.base.BaseTest - ***Filling Form 001***
-2026-01-04 23:11:51 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'Patrick O'Donnell' into Customer Name
-2026-01-04 23:11:51 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'patrick.odonnell@example.com' into Customer Email
-2026-01-04 23:11:51 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing '0864123987' into Customer Phone
-2026-01-04 23:11:52 [main] INFO  com.esbnetworks.automation.base.BasePage - Selecting value '1' from dropdown Installer Position
-2026-01-04 23:11:52 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'EcoVolt Energy Ltd.' into Installer Company Name
-2026-01-04 23:11:52 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'Mark Heffernan' into Installer Name
-2026-01-04 23:11:52 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing '0877741201' into Installer Phone
-2026-01-04 23:11:52 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing '0859123412' into Installer Phone 2
-2026-01-04 23:11:52 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'mark.heffernan@ecovolt.ie' into Installer Email
-2026-01-04 23:11:53 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing '12' into House Number
-2026-01-04 23:11:53 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'Rathmore Lane' into Street Address
-2026-01-04 23:11:53 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'Athboy' into Town/City
-2026-01-04 23:11:53 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'Meath' into County
-2026-01-04 23:11:54 [main] INFO  com.esbnetworks.automation.base.BasePage - Selecting value '0' from dropdown Country
-2026-01-04 23:11:54 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'A82 YD93' into Postal Code
-2026-01-04 23:11:54 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicked 'Save & Continue'
-2026-01-04 23:11:54 [main] INFO  com.esbnetworks.automation.base.BaseTest - ***Filling Form 002***
-2026-01-04 23:11:54 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button First Install Yes
-2026-01-04 23:11:56 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for First Install Yes, trying JS click
-2026-01-04 23:11:56 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing '10005432341' into MRPN Number
-2026-01-04 23:11:56 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'Site House 1' into Site House
-2026-01-04 23:11:56 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'Site Street' into Site Street
-2026-01-04 23:11:56 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'Site Area' into Site Town/Area
-2026-01-04 23:11:56 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'Dublin' into Site City
-2026-01-04 23:11:57 [main] INFO  com.esbnetworks.automation.base.BasePage - Selecting 'CORK' from dropdown Site County
-2026-01-04 23:11:57 [main] INFO  com.esbnetworks.automation.base.BasePage - Selecting 'Ireland' from dropdown Site Country
-2026-01-04 23:11:57 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'D01 AB12' into Site Eircode
-2026-01-04 23:11:57 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button Installed After Jan 2022
-2026-01-04 23:11:58 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for Installed After Jan 2022, trying JS click
-2026-01-04 23:11:58 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button New Connection
-2026-01-04 23:11:59 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for New Connection, trying JS click
-2026-01-04 23:11:59 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button 1 Phase
-2026-01-04 23:12:00 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for 1 Phase, trying JS click
-2026-01-04 23:12:01 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button Energy Source: Solar
-2026-01-04 23:12:02 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for Energy Source: Solar, trying JS click
-2026-01-04 23:12:02 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'Test Manufacturer' into Manufacturer
-2026-01-04 23:12:02 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing 'Test Model X' into Model
-2026-01-04 23:12:02 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing '5.0' into Inverter Capacity
-2026-01-04 23:12:02 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing '20.0' into Rated Current
-2026-01-04 23:12:02 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing '3.00' into Generator Installed
-2026-01-04 23:12:03 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing '2.00' into Storage Installed
-2026-01-04 23:12:03 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button Confirm Certification
-2026-01-04 23:12:04 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for Confirm Certification, trying JS click
-2026-01-04 23:12:04 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button Confirm Settings
-2026-01-04 23:12:05 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for Confirm Settings, trying JS click
-2026-01-04 23:12:07 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicked 'Save'
-2026-01-04 23:12:31 [main] INFO  com.esbnetworks.automation.base.BaseTest - Unit Type Test Certificate file uploaded successfully!
-2026-01-04 23:12:42 [main] INFO  com.esbnetworks.automation.base.BaseTest - Form 2 filled and file uploaded successfully!
-2026-01-04 23:12:42 [main] INFO  com.esbnetworks.automation.base.BaseTest - ***Filling Form 003***
-2026-01-04 23:12:43 [main] INFO  com.esbnetworks.automation.base.BasePage - Post Registered Installer set to YES
-2026-01-04 23:12:43 [main] INFO  com.esbnetworks.automation.base.BasePage - Typing '123456' into Safe Electric Number
+  <testcase name="testLoginAndFillForm" classname="com.esbnetworks.tests.FormAutomationTest" time="67.852">
+    <system-out><![CDATA[2026-01-17T13:07:54.441971900Z main INFO Starting configuration XmlConfiguration[location=C:\Selenium framework export\esbnetworks (2)\esbnetworks\selenium-form-automation\esb_form_submission\target\classes\log4j2.xml, lastModified=2025-12-25T05:00:35.468Z]...
+2026-01-17T13:07:54.445107200Z main INFO Start watching for changes to C:\Selenium framework export\esbnetworks (2)\esbnetworks\selenium-form-automation\esb_form_submission\target\classes\log4j2.xml every 0 seconds
+2026-01-17T13:07:54.445107200Z main INFO Configuration XmlConfiguration[location=C:\Selenium framework export\esbnetworks (2)\esbnetworks\selenium-form-automation\esb_form_submission\target\classes\log4j2.xml, lastModified=2025-12-25T05:00:35.468Z] started.
+2026-01-17T13:07:54.448666800Z main INFO Stopping configuration org.apache.logging.log4j.core.config.DefaultConfiguration@71ba6d4e...
+2026-01-17T13:07:54.449436600Z main INFO Configuration org.apache.logging.log4j.core.config.DefaultConfiguration@71ba6d4e stopped.
+2026-01-17 18:37:54 [main] INFO  com.esbnetworks.automation.base.BaseTest - ----------Initializing Selenium WebDriver------------
+2026-01-17 18:38:00 [main] INFO  com.esbnetworks.automation.base.BaseTest - Navigating to login page: https://newconnections.esbnetworks.ie/RenewableConnection/RenewableConnectionType
+2026-01-17 18:38:04 [main] INFO  com.esbnetworks.automation.base.BaseTest - Starting Login + Form Automation Test
+2026-01-17 18:38:04 [main] INFO  com.esbnetworks.automation.base.BaseTest - Logging in as: edel@solarbeo.ie
+2026-01-17 18:38:06 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'edel@solarbeo.ie' into Username Field
+2026-01-17 18:38:07 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'Cooleen12024!' into Password Field
+2026-01-17 18:38:07 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicked on Login Button
+2026-01-17 18:38:07 [main] INFO  com.esbnetworks.automation.base.BasePage - Login action completed successfully.
+2026-01-17 18:38:27 [main] INFO  com.esbnetworks.automation.base.BaseTest - ***Filling Form 001***
+2026-01-17 18:38:27 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'Patrick O'Donnell' into Customer Name
+2026-01-17 18:38:28 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'patrick.odonnell@example.com' into Customer Email
+2026-01-17 18:38:29 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '0864123987' into Customer Phone
+2026-01-17 18:38:29 [main] INFO  com.esbnetworks.automation.base.BasePage - Selecting value '1' from dropdown Installer Position
+2026-01-17 18:38:30 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'EcoVolt Energy Ltd.' into Installer Company Name
+2026-01-17 18:38:30 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'Mark Heffernan' into Installer Name
+2026-01-17 18:38:30 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '0877741201' into Installer Phone
+2026-01-17 18:38:31 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '0859123412' into Installer Phone 2
+2026-01-17 18:38:31 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'mark.heffernan@ecovolt.ie' into Installer Email
+2026-01-17 18:38:32 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '12' into House Number
+2026-01-17 18:38:32 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'Rathmore Lane' into Street Address
+2026-01-17 18:38:32 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'Athboy' into Town/City
+2026-01-17 18:38:33 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'Meath' into County
+2026-01-17 18:38:33 [main] INFO  com.esbnetworks.automation.base.BasePage - Selecting value '0' from dropdown Country
+2026-01-17 18:38:33 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'A82 YD93' into Postal Code
+2026-01-17 18:38:33 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicked 'Save & Continue'
+2026-01-17 18:38:33 [main] INFO  com.esbnetworks.automation.base.BaseTest - ***Filling Form 002***
+2026-01-17 18:38:33 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button First Install Yes
+2026-01-17 18:38:36 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for First Install Yes, trying JS click
+2026-01-17 18:38:36 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '10005432341' into MRPN Number
+2026-01-17 18:38:37 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'Site House 1' into Site House
+2026-01-17 18:38:37 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'Site Street' into Site Street
+2026-01-17 18:38:37 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'Site Area' into Site Town/Area
+2026-01-17 18:38:38 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'Dublin' into Site City
+2026-01-17 18:38:38 [main] INFO  com.esbnetworks.automation.base.BasePage - Selecting 'CORK' from dropdown Site County
+2026-01-17 18:38:38 [main] INFO  com.esbnetworks.automation.base.BasePage - Selecting 'Ireland' from dropdown Site Country
+2026-01-17 18:38:38 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'D01 AB12' into Site Eircode
+2026-01-17 18:38:38 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button Installed After Jan 2022
+2026-01-17 18:38:39 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for Installed After Jan 2022, trying JS click
+2026-01-17 18:38:39 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button New Connection
+2026-01-17 18:38:41 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for New Connection, trying JS click
+2026-01-17 18:38:41 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button 1 Phase
+2026-01-17 18:38:42 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for 1 Phase, trying JS click
+2026-01-17 18:38:42 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button Energy Source: Solar
+2026-01-17 18:38:43 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for Energy Source: Solar, trying JS click
+2026-01-17 18:38:43 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'Test Manufacturer' into Manufacturer
+2026-01-17 18:38:44 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'Test Model X' into Model
+2026-01-17 18:38:44 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '5.0' into Inverter Capacity
+2026-01-17 18:38:44 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '20.0' into Rated Current
+2026-01-17 18:38:45 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '3.00' into Generator Installed
+2026-01-17 18:38:45 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '2.00' into Storage Installed
+2026-01-17 18:38:45 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button Confirm Certification
+2026-01-17 18:38:46 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for Confirm Certification, trying JS click
+2026-01-17 18:38:47 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button Confirm Settings
+2026-01-17 18:38:49 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicked 'Save'
+2026-01-17 18:38:59 [main] INFO  com.esbnetworks.automation.base.BaseTest - Unit Type Test Certificate file uploaded successfully!
+2026-01-17 18:39:04 [main] INFO  com.esbnetworks.automation.base.BaseTest - Form 2 filled and file uploaded successfully!
+2026-01-17 18:39:04 [main] INFO  com.esbnetworks.automation.base.BaseTest - ***Filling Form 003***
+2026-01-17 18:39:04 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post Registered Installer YES
+2026-01-17 18:39:04 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '123456' into Safe Electric Number
+2026-01-17 18:39:04 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post Single Stage Voltage YES
+2026-01-17 18:39:04 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post Two Stage Voltage Settings Stage 2 YES
+2026-01-17 18:39:05 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post Under Voltage YES
+2026-01-17 18:39:05 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post Over Frequency YES
+2026-01-17 18:39:05 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post Under Frequency YES
+2026-01-17 18:39:05 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post ROCOF YES
+2026-01-17 18:39:05 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post Vector Shift YES
+2026-01-17 18:39:05 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post Installation Confirmed by Installer
+2026-01-17 18:39:05 [main] INFO  com.esbnetworks.automation.base.BaseTest - Form 3 filled and checkbox clicked successfully!
 ]]></system-out>
     <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Jan 04, 2026 11:11:26 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Jan 17, 2026 6:38:00 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 143
-Jan 04, 2026 11:11:26 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 143.0.7499.170. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.27.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+Jan 17, 2026 6:38:00 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 143.0.7499.193. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.27.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
 </testsuite>

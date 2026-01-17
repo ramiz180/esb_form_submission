@@ -5,4 +5,7 @@
             <class name="com.esbnetworks.tests.FormAutomationTest" />
         </classes>
     </test>
+    <listeners>
+        <listener class-name="com.esbnetworks.automation.base.AnnotationTransformer"/>
+    </listeners>
 </suite>
