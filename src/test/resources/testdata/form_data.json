@@ -1,0 +1,78 @@
+{
+    "login": {
+        "username": "test.user@esb.ie",
+        "password": "Password@123"
+    },
+    "form001": {
+        "customer": {
+            "name": "Patrick O'Donnell",
+            "email": "patrick.odonnell@example.com",
+            "phone": "0864123987"
+        },
+        "installer": {
+            "position": "1",
+            "company": "EcoVolt Energy Ltd.",
+            "name": "Mark Heffernan",
+            "phone1": "0877741201",
+            "phone2": "0859123412",
+            "email": "mark.heffernan@ecovolt.ie"
+        },
+        "address": {
+            "house": "12",
+            "street": "Rathmore Lane",
+            "town": "Athboy",
+            "county": "Meath",
+            "country": "0",
+            "postcode": "A82 YD93"
+        }
+    },
+    "form002": {
+        "firstInstall": true,
+        "mprn": "10005432341",
+        "siteAddress": {
+            "house": "Site House 1",
+            "street": "Site Street",
+            "area": "Site Area",
+            "city": "Dublin",
+            "county": "CORK",
+            "country": "Ireland",
+            "eircode": "D01 AB12"
+        },
+        "installation": {
+            "date": "after",
+            "connectionType": "new",
+            "phase": 1,
+            "energySource": "Solar"
+        },
+        "equipment": {
+            "manufacturer": "Test Manufacturer",
+            "model": "Test Model X",
+            "inverterCapacity": "5.0",
+            "ratedCurrent": "20.0",
+            "generatorInstalled": "3.00",
+            "storageInstalled": "2.00"
+        }
+    },
+    "form003": {
+        "postRegisteredInstaller": true,
+        "safeElectricNumber": "123456",
+        "singleStageVoltage": true,
+        "twoStageVoltageStage2": true,
+        "underVoltage": true,
+        "overFrequency": true,
+        "underFrequency": true,
+        "rocOf": true,
+        "vectorShift": true,
+        "installerConfirmed": true
+    },
+    "uploads": {
+        "unitTestCertificate": {
+            "index": 120,
+            "path": "C:/Users/ramiz.mondal/Downloads/samplePDF.pdf"
+        },
+        "typeTestCertificate": {
+            "index": 130,
+            "path": "C:/Users/ramiz.mondal/Downloads/samplePDF.pdf"
+        }
+    }
+}

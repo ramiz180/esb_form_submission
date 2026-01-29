@@ -501,4 +501,24 @@ public class RenewableConnectionPage extends BasePage {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(spinner));
     }
 
+    // ------------------------------------
+    // -------- SUBMIT APPLICATION --------
+    // ------------------------------------
+    private final By submitApplicationBtn = By.xpath("//span[.='Submit Application']");
+
+    public void clickSubmitApplication() {
+        // Scroll to element to ensure it's in view
+        scrollToElement(submitApplicationBtn);
+
+        // Wait for it to be visible/clickable (optional but good practice)
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(submitApplicationBtn));
+
+        // Use JS click as it's often more reliable for these types of buttons in this
+        // app
+        WebElement btn = driver.findElement(submitApplicationBtn);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", btn);
+        logger.info("Clicked 'Submit Application'");
+    }
+
 }
