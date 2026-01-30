@@ -4,6 +4,7 @@
         "password": "Password@123"
     },
     "form001": {
+        "mprnType": "single",
         "customer": {
             "name": "Patrick O'Donnell",
             "email": "patrick.odonnell@example.com",
@@ -13,8 +14,8 @@
             "position": "1",
             "company": "EcoVolt Energy Ltd.",
             "name": "Mark Heffernan",
-            "phone1": "0877741201",
-            "phone2": "0859123412",
+            "phonePrimary": "0877741201",
+            "phoneSecondary": "0859123412",
             "email": "mark.heffernan@ecovolt.ie"
         },
         "address": {
@@ -22,12 +23,13 @@
             "street": "Rathmore Lane",
             "town": "Athboy",
             "county": "Meath",
-            "country": "0",
-            "postcode": "A82 YD93"
+            "country": "Ireland",
+            "eircode": "A82YD93"
         }
     },
     "form002": {
         "firstInstall": true,
+        "isReplacingInverter": false,
         "mprn": "10005432341",
         "siteAddress": {
             "house": "Site House 1",
@@ -36,27 +38,33 @@
             "city": "Dublin",
             "county": "CORK",
             "country": "Ireland",
-            "eircode": "D01 AB12"
+            "eircode": "D01AB12"
         },
         "installation": {
-            "date": "after",
+            "installedAfterJan28_2022": true,
             "connectionType": "new",
-            "phase": 1,
-            "energySource": "Solar"
+            "phase": 1
         },
-        "equipment": {
-            "manufacturer": "Test Manufacturer",
-            "model": "Test Model X",
-            "inverterCapacity": "5.0",
-            "ratedCurrent": "20.0",
-            "generatorInstalled": "3.00",
-            "storageInstalled": "2.00"
-        }
+        "units": [
+            {
+                "energySource": "Solar",
+                "manufacturer": "Test Manufacturer",
+                "model": "Test Model X",
+                "referenceNumber": "REF-001",
+                "inverterCapacity": "5.0",
+                "ratedCurrent": "20.0",
+                "generatorInstalled": "3.0",
+                "storageInstalled": "2.0",
+                "wyeInterface": true,
+                "interfaceStandard": "IS EN 50549"
+            }
+        ]
     },
     "form003": {
         "postRegisteredInstaller": true,
         "safeElectricNumber": "123456",
         "singleStageVoltage": true,
+        "twoStageVoltageStage1": true,
         "twoStageVoltageStage2": true,
         "underVoltage": true,
         "overFrequency": true,
@@ -66,13 +74,17 @@
         "installerConfirmed": true
     },
     "uploads": {
-        "unitTestCertificate": {
-            "index": 120,
-            "path": "C:/Users/ramiz.mondal/Downloads/samplePDF.pdf"
-        },
-        "typeTestCertificate": {
-            "index": 130,
-            "path": "C:/Users/ramiz.mondal/Downloads/samplePDF.pdf"
-        }
+        "files": [
+            {
+                "index": 120,
+                "type": "unit_test_certificate",
+                "path": "C:/Users/ramiz.mondal/Downloads/samplePDF.pdf"
+            },
+            {
+                "index": 130,
+                "type": "type_test_certificate",
+                "path": "C:/Users/ramiz.mondal/Downloads/samplePDF.pdf"
+            }
+        ]
     }
 }

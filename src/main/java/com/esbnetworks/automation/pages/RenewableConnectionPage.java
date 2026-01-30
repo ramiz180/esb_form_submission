@@ -213,33 +213,93 @@ public class RenewableConnectionPage extends BasePage {
         }
     }
 
-    public void fillCustomerDetails(String name, String email, String phone) {
+    public void enterCustomerName(String name) {
         sendKeys(customerName, name, "Customer Name");
+    }
+
+    public void enterCustomerEmail(String email) {
         sendKeys(customerEmail, email, "Customer Email");
+    }
+
+    public void enterCustomerPhone(String phone) {
         if (phone != null)
             sendKeys(customerPhone, phone, "Customer Phone");
     }
 
-    public void fillInstallerDetails(String positionValue, String company, String name, String phone, String phone2,
-            String email) {
-        selectByValue(installerPosition, positionValue, "Installer Position"); // Value "1" for Installer
+    public void fillCustomerDetails(String name, String email, String phone) {
+        enterCustomerName(name);
+        enterCustomerEmail(email);
+        enterCustomerPhone(phone);
+    }
+
+    public void enterInstallerPosition(String positionValue) {
+        selectByValue(installerPosition, positionValue, "Installer Position");
+    }
+
+    public void enterInstallerCompanyName(String company) {
         sendKeys(installerCompanyName, company, "Installer Company Name");
+    }
+
+    public void enterInstallerName(String name) {
         sendKeys(installerName, name, "Installer Name");
+    }
+
+    public void enterInstallerPhone(String phone) {
         if (phone != null)
             sendKeys(installerPhone, phone, "Installer Phone");
+    }
+
+    public void enterInstallerPhone2(String phone2) {
         if (phone2 != null)
             sendKeys(installerPhone2, phone2, "Installer Phone 2");
+    }
+
+    public void enterInstallerEmail(String email) {
         sendKeys(installerEmail, email, "Installer Email");
+    }
+
+    public void fillInstallerDetails(String positionValue, String company, String name, String phone, String phone2,
+            String email) {
+        enterInstallerPosition(positionValue);
+        enterInstallerCompanyName(company);
+        enterInstallerName(name);
+        enterInstallerPhone(phone);
+        enterInstallerPhone2(phone2);
+        enterInstallerEmail(email);
+    }
+
+    public void enterAddressHouse(String house) {
+        sendKeys(addrHouse, house, "House Number");
+    }
+
+    public void enterAddressStreet(String street) {
+        sendKeys(addrStreet, street, "Street Address");
+    }
+
+    public void enterAddressTown(String town) {
+        sendKeys(addrTown, town, "Town/City");
+    }
+
+    public void enterAddressCounty(String county) {
+        sendKeys(addrCounty, county, "County");
+    }
+
+    public void selectAddressCountry(String countryValue) {
+        selectByValue(addrCountry, countryValue, "Country");
+    }
+
+    public void enterAddressPostCode(String postCode) {
+        sendKeys(addrPostCode, postCode, "Postal Code");
     }
 
     public void fillAddress(String house, String street, String town, String county, String countryValue,
             String postCode) {
-        sendKeys(addrHouse, house, "House Number");
-        sendKeys(addrStreet, street, "Street Address");
-        sendKeys(addrTown, town, "Town/City");
-        sendKeys(addrCounty, county, "County");
-        selectByValue(addrCountry, countryValue, "Country"); // "0" for Ireland
-        sendKeys(addrPostCode, postCode, "Postal Code");
+        enterAddressHouse(house);
+        enterAddressStreet(street);
+        enterAddressTown(town);
+        enterAddressCounty(county);
+        selectAddressCountry(countryValue);
+        enterAddressPostCode(postCode);
     }
 
     public void selectFirstInstall(boolean isYes) {

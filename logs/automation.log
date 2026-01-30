@@ -78,3 +78,82 @@ Session ID: e34fd8ff9e196f0c5330e3db7a3c1956
 2026-01-28 22:14:21 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicked 'Submit Application'
 2026-01-28 22:14:36 [main] INFO  com.esbnetworks.automation.base.BaseTest - Form submitted successfully!
 2026-01-28 22:14:38 [main] INFO  com.esbnetworks.automation.base.BaseTest - ----------closed WebDriver----------
+2026-01-29 16:17:34 [main] INFO  com.esbnetworks.automation.base.BaseTest - ----------Initializing Selenium WebDriver------------
+2026-01-29 16:17:49 [main] INFO  com.esbnetworks.automation.base.BaseTest - Navigating to login page: https://newconnections.esbnetworks.ie/RenewableConnection/RenewableConnectionType
+2026-01-29 16:17:53 [main] INFO  com.esbnetworks.automation.base.BaseTest - Starting Login + Form Automation Test
+2026-01-29 16:17:53 [main] INFO  com.esbnetworks.automation.base.BaseTest - Logging in as: edel@solarbeo.ie
+2026-01-29 16:17:56 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'edel@solarbeo.ie' into Username Field
+2026-01-29 16:17:56 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'Cooleen12024!' into Password Field
+2026-01-29 16:17:57 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicked on Login Button
+2026-01-29 16:17:57 [main] INFO  com.esbnetworks.automation.base.BasePage - Login action completed successfully.
+2026-01-29 16:18:16 [main] INFO  com.esbnetworks.automation.base.BaseTest - ***Filling Form 001***
+2026-01-29 16:18:17 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'Donal O'Laoghaire' into Customer Name
+2026-01-29 16:18:17 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'donieboy65@yahoo.ie' into Customer Email
+2026-01-29 16:18:18 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '0852838971' into Customer Phone
+2026-01-29 16:18:18 [main] INFO  com.esbnetworks.automation.base.BasePage - Selecting value '1' from dropdown Installer Position
+2026-01-29 16:18:19 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'Solar Beo' into Installer Company Name
+2026-01-29 16:18:19 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'Ciarán Murphy' into Installer Name
+2026-01-29 16:18:20 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '0877746021' into Installer Phone
+2026-01-29 16:18:20 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '0669151045' into Installer Phone 2
+2026-01-29 16:18:21 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'edel@solarbeo.ie' into Installer Email
+2026-01-29 16:18:21 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'MILLTOWN' into House Number
+2026-01-29 16:18:21 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'DINGLE' into Street Address
+2026-01-29 16:18:22 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'Dingle' into Town/City
+2026-01-29 16:18:22 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'V92 R159' into County
+2026-01-29 16:18:22 [main] INFO  com.esbnetworks.automation.base.BasePage - Selecting value '0' from dropdown Country
+2026-01-29 16:18:23 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'V92 R159' into Postal Code
+2026-01-29 16:18:23 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicked 'Save & Continue'
+2026-01-29 16:18:23 [main] INFO  com.esbnetworks.automation.base.BaseTest - ***Filling Form 002***
+2026-01-29 16:18:23 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button First Install Yes
+2026-01-29 16:18:27 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for First Install Yes, trying JS click
+2026-01-29 16:18:28 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '10303923781' into MRPN Number
+2026-01-29 16:18:28 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'N/A' into Site House
+2026-01-29 16:18:28 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'BRACKAHARAGH' into Site Street
+2026-01-29 16:18:28 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'CAHERDANIEL' into Site Town/Area
+2026-01-29 16:18:29 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'KILLARNEY' into Site City
+2026-01-29 16:18:29 [main] INFO  com.esbnetworks.automation.base.BasePage - Selecting 'KERRY' from dropdown Site County
+2026-01-29 16:18:29 [main] INFO  com.esbnetworks.automation.base.BasePage - Selecting 'Ireland' from dropdown Site Country
+2026-01-29 16:18:29 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'V93E4F3' into Site Eircode
+2026-01-29 16:18:29 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button Installed After Jan 2022
+2026-01-29 16:18:31 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for Installed After Jan 2022, trying JS click
+2026-01-29 16:18:31 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button New Connection
+2026-01-29 16:18:32 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for New Connection, trying JS click
+2026-01-29 16:18:32 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button 1 Phase
+2026-01-29 16:18:33 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for 1 Phase, trying JS click
+2026-01-29 16:18:33 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button Energy Source: Solar
+2026-01-29 16:18:34 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for Energy Source: Solar, trying JS click
+2026-01-29 16:18:34 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'SAJ' into Manufacturer
+2026-01-29 16:18:35 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'HS3-6K-S2-W/G-P-IE' into Model
+2026-01-29 16:18:35 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '5.75' into Inverter Capacity
+2026-01-29 16:18:35 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '25.00' into Rated Current
+2026-01-29 16:18:36 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '5.30' into Generator Installed
+2026-01-29 16:18:36 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed '5.00' into Storage Installed
+2026-01-29 16:18:36 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button Confirm Certification
+2026-01-29 16:18:37 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for Confirm Certification, trying JS click
+2026-01-29 16:18:37 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicking radio button Confirm Settings
+2026-01-29 16:18:38 [main] WARN  com.esbnetworks.automation.base.BasePage - Standard click failed for Confirm Settings, trying JS click
+2026-01-29 16:18:41 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicked 'Save'
+2026-01-29 16:19:04 [main] ERROR com.esbnetworks.automation.base.BasePage - Failed to upload file: Expected condition failed: waiting for visibility of element located by By.id: uploadedFileNm-120 (tried for 20 second(s) with 500 milliseconds interval)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.109 (6a8d5e49388..., userDataDir: C:\Users\RAMIZ~1.MON\AppDat...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61738}, goog:processID: 37052, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61738/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 13bded6f7885560a7f07080b7cffaaa9
+2026-01-29 16:19:19 [main] INFO  com.esbnetworks.automation.base.BaseTest - Unit Type Test Certificate file uploaded successfully!
+2026-01-29 16:19:42 [main] INFO  com.esbnetworks.automation.base.BaseTest - Form 2 filled and file uploaded successfully!
+2026-01-29 16:19:42 [main] INFO  com.esbnetworks.automation.base.BaseTest - ***Filling Form 003***
+2026-01-29 16:19:42 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post Registered Installer YES
+2026-01-29 16:19:42 [main] INFO  com.esbnetworks.automation.base.BasePage - Typed 'A1170' into Safe Electric Number
+2026-01-29 16:19:43 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post Single Stage Voltage YES
+2026-01-29 16:19:43 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post Two Stage Voltage Settings Stage 1 YES
+2026-01-29 16:19:43 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post Two Stage Voltage Settings Stage 2 YES
+2026-01-29 16:19:43 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post Under Voltage YES
+2026-01-29 16:19:43 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post Over Frequency YES
+2026-01-29 16:19:43 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post Under Frequency YES
+2026-01-29 16:19:43 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post ROCOF YES
+2026-01-29 16:19:43 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post Vector Shift YES
+2026-01-29 16:19:43 [main] INFO  com.esbnetworks.automation.base.BasePage - JS clicked with change event: Post Installation Confirmed by Installer
+2026-01-29 16:19:43 [main] INFO  com.esbnetworks.automation.base.BasePage - Clicked 'Save & Continue' on Form 3
+2026-01-29 16:19:49 [main] INFO  com.esbnetworks.automation.base.BaseTest - Form 3 filled and checkbox clicked successfully!
+2026-01-29 16:20:04 [main] INFO  com.esbnetworks.automation.base.BaseTest - Form submitted successfully!
+2026-01-29 16:20:04 [main] INFO  com.esbnetworks.automation.base.BaseTest - ----------closed WebDriver----------

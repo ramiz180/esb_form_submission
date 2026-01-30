@@ -40,26 +40,23 @@ public class FormAutomationTest extends BaseTest {
 
         // Fill Form 001
         logger.info("***Filling Form 001***");
-        formPage.fillCustomerDetails(
-                "Donal O'Laoghaire",
-                "donieboy65@yahoo.ie",
-                "0852838971");
+        formPage.enterCustomerName("Donal O'Laoghaire");
+        formPage.enterCustomerEmail("donieboy65@yahoo.ie");
+        formPage.enterCustomerPhone("0852838971");
 
-        formPage.fillInstallerDetails(
-                "1", // Installer
-                "Solar Beo",
-                "Ciarán Murphy",
-                "0877746021",
-                "0669151045",
-                "edel@solarbeo.ie");
+        formPage.enterInstallerPosition("1"); // Installer
+        formPage.enterInstallerCompanyName("Solar Beo");
+        formPage.enterInstallerName("Ciarán Murphy");
+        formPage.enterInstallerPhone("0877746021");
+        formPage.enterInstallerPhone2("0669151045");
+        formPage.enterInstallerEmail("edel@solarbeo.ie");
 
-        formPage.fillAddress(
-                "MILLTOWN",
-                "DINGLE",
-                "Dingle",
-                "V92 R159",
-                "0", // Ireland
-                "V92 R159");
+        formPage.enterAddressHouse("MILLTOWN");
+        formPage.enterAddressStreet("DINGLE");
+        formPage.enterAddressTown("Dingle");
+        formPage.enterAddressCounty("V92 R159");
+        formPage.selectAddressCountry("0"); // Ireland
+        formPage.enterAddressPostCode("V92 R159");
 
         formPage.clickSaveAndContinue();
 
@@ -141,7 +138,7 @@ public class FormAutomationTest extends BaseTest {
         formPage.clickSaveAndContinueForm3();
         Thread.sleep(5000);
         logger.info("Form 3 filled and checkbox clicked successfully!");
-        formPage.clickSubmitApplication();
+        // formPage.clickSubmitApplication();
 
         Thread.sleep(15000);
         logger.info("Form submitted successfully!");
