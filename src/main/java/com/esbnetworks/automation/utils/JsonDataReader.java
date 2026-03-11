@@ -13,7 +13,7 @@ public class JsonDataReader {
         try {
             ObjectMapper mapper = new ObjectMapper();
             rootNode = mapper.readTree(
-                    new File("src/test/resources/testdata/renewable_form_data.json"));
+                    new File("src/test/resources/testdata/form_data.json"));
         } catch (Exception e) {
             throw new RuntimeException("Failed to load JSON test data", e);
         }
